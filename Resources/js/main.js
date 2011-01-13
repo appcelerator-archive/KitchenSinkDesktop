@@ -62,9 +62,29 @@ KitchenSink.addTopicMenu = function(topic)
 
 KitchenSink.Topic = function(file)
 {
+
 	// Load topic content text
 	this.contentDiv = $('<div class="topic_content">');
-	this.contentDiv.html(file.read().toString());
+  
+  // Store the contents of the file here.
+  var string = "";
+
+  // Get the filestream for the target file.
+  var fileStream = Titanium.Filesystem.getFileStream(file);
+
+  // Open the file for reading.
+  fileStream.open(Titanium.Filesystem.MODE_READ);
+
+  // Read the file from the filesystem, line by line
+  var line = fileStream.readLine();
+  string += line;
+  while(line != null) {
+      line = fileStream.readLine();
+      string += "\n" + line;
+  }
+  fileStream.close();
+  
+	this.contentDiv.html(string);
 	this.contentDiv.hide();
 
 	this.name = $('h1', this.contentDiv).first().text();
