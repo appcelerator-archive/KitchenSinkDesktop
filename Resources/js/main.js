@@ -64,7 +64,7 @@ KitchenSink.Topic = function(file)
 {
 	// Load topic content text
 	this.contentDiv = $('<div class="topic_content">');
-	this.contentDiv.html(file.read().toString());
+	this.contentDiv.html(file.open().read(file.size()).toString());
 	this.contentDiv.hide();
 
 	this.name = $('h1', this.contentDiv).first().text();

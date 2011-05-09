@@ -3,7 +3,7 @@ Windows
 ##The Current Window
 
 All Titanium windows are 
-[UI.UserWindow](http://developer.appcelerator.com/apidoc/desktop/1.0/Titanium.UI.UserWindow)
+[UI.UserWindow](http://developer.appcelerator.com/apidoc/desktop/latest/Titanium.UI.UserWindow-object.html)
 objects. Code running in context of an HTML page can easily access the current window:
 
 	:::javascript
