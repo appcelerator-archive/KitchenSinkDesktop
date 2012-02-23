@@ -9,7 +9,7 @@ file with both APIs as well. Currently both APIs use SQLite backends.
 ##Opening a Database
 
 There are two ways to open Titanim databases, <tt>Titanium.Database.open</tt>
-and <tt>Titanium.Database.openFile</tt>. <tt>open</tt> will create (if necessarY0
+and <tt>Titanium.Database.openFile</tt>. <tt>open</tt> will create (if necessary
 and open a database in the same directory and schema as WebKit HTML 5 databases.
 Use this method if you'd like to use a single database with both APIs.
 
@@ -58,7 +58,7 @@ Inserting and retrieving data works in a very similar way:
 	while (resultSet.isValidRow())
 	{
 		var text = "";
-		for (var i = 0; i &lt; resultSet.fieldCount(); i++)
+		for (var i = 0; i < resultSet.fieldCount(); i++)
 			text += resultSet.fieldName(i) + ":"
 				 + resultSet.field(i) + " ";
 		alert(text);
