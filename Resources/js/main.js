@@ -23,7 +23,7 @@ KitchenSink.loadTopics = function()
 	var sink = this;
 	topicDir.getDirectoryListing().forEach(function(topicFile)
 	{
-		var topic = new KitchenSink.Topic(topicFile);
+		var topic = new KitchenSink.Topic(Ti.fs.getFileStream(topicFile));
 		sink.contentArea.append(topic.contentDiv);
 		sink.addTopicMenu(topic);
 		sink.topics.push(topic);
@@ -62,10 +62,12 @@ KitchenSink.addTopicMenu = function(topic)
 
 KitchenSink.Topic = function(file)
 {
+	file.open();
 	// Load topic content text
 	this.contentDiv = $('<div class="topic_content">');
 	this.contentDiv.html(file.open().read(file.size()).toString());
 	this.contentDiv.hide();
+	file.close();
 
 	this.name = $('h1', this.contentDiv).first().text();
 
