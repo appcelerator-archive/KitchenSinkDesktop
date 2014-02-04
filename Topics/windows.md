@@ -38,13 +38,13 @@ Most window properties can be changed:
 	var newWidth = parseInt(prompt("New window width:"));
 
 	// Keep KitchenSink functional.
-	if (!isNaN(newWidth) &amp;&amp; newWidth > 300)
+	if (!isNaN(newWidth) && newWidth > 300)
 		Titanium.UI.currentWindow.setWidth(newWidth);
 
 	var newHeight = parseInt(prompt("New window height:"));
 
 	// Keep KitchenSink functional.
-	if (!isNaN(newHeight) &amp;&amp; newHeight > 300)
+	if (!isNaN(newHeight) && newHeight > 300)
 		Titanium.UI.currentWindow.setHeight(newHeight);
 
 	// Modify the bounds of the window all at once
